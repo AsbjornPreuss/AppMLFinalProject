@@ -32,8 +32,13 @@ for file in fnames:
         plt.show(block=False)
         plt.pause(2)
         plt.close()
-        category = input("Write s for reading errors, d for muon (straight lines), f for electron (Squiqqly lines), \n" + \
-                     "j for X-rays(small dots), k for other things, l for multiple objects. Any to repeat: ")
+        category = input('''Write s for reading errors\n
+                            d for muon (straight lines)\n 
+                            f for electron (Squiqqly lines), \n
+                            j for X-rays(small dots)\n
+                            k for other things\n
+                            l for multiple objects\n
+                            Any to repeat:\n''')
     categories[1].append(category)
     categories[0].append(index)
     
