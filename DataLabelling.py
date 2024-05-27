@@ -52,7 +52,7 @@ def category_to_number(category):
 categories[1] = [category_to_number(category) for category in categories[1]]
 categories = np.array(categories)
 # Finally write the categories to a numpy file
-np.save(f'categories_{categories[0,0]}_{categories[0,-1]}.npy', categories)
+np.save(f'./labels/categories_{categories[0,0]}_{categories[0,-1]}.npy', categories)
 
 
 
