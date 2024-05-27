@@ -25,7 +25,7 @@ for file in fnames:
             break
     image = np.genfromtxt(directory + '/' + file, delimiter=',', ndmin=2).data
     category = "r"
-    while category not in ['d', 'f', 'j', 'k']:
+    while category not in ['s','l','d', 'f', 'j', 'k']:
         print(index, start_index, file)
         plt.imshow(image, cmap='binary')
         plt.title(file)
@@ -33,7 +33,7 @@ for file in fnames:
         plt.pause(2)
         plt.close()
         category = input("Write s for reading errors, d for muon (straight lines), f for electron (Squiqqly lines), \n" + \
-                     "j for X-rays(small dots), k for other things. Any to repeat: ")
+                     "j for X-rays(small dots), k for other things, l for multiple objects. Any to repeat: ")
     categories[1].append(category)
     categories[0].append(index)
     
@@ -49,6 +49,8 @@ def category_to_number(category):
         return 2
     if category == 'd':
         return 3
+    if category == 'l':
+        return 4
 categories[1] = [category_to_number(category) for category in categories[1]]
 categories = np.array(categories)
 # Finally write the categories to a numpy file
