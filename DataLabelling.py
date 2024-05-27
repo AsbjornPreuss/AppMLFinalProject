@@ -45,7 +45,7 @@ Any to repeat:\n''')
 # Convert categories to numbers
 def category_to_number(category):
     if category == 's':
-        return 4
+        return 5
     if category == 'k':
         return 0
     if category == 'j':
