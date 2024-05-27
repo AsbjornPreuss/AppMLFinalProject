@@ -24,14 +24,16 @@ for file in fnames:
         if exit == "":
             break
     image = np.genfromtxt(directory + '/' + file, delimiter=',', ndmin=2).data
-    print(index, start_index, file)
-    plt.imshow(image, cmap='binary')
-    plt.title(file)
-    plt.show(block=False)
-    plt.pause(2)
-    plt.close()
-    category = input("Write d for muon (straight lines), f for electron (Squiqqly lines), \n" + \
-                     "j for X-rays(small dots), k for other things: ")
+    category = "r"
+    while category not in ['d', 'f', 'j', 'k']:
+        print(index, start_index, file)
+        plt.imshow(image, cmap='binary')
+        plt.title(file)
+        plt.show(block=False)
+        plt.pause(2)
+        plt.close()
+        category = input("Write d for muon (straight lines), f for electron (Squiqqly lines), \n" + \
+                     "j for X-rays(small dots), k for other things. Any to repeat: ")
     categories[1].append(category)
     categories[0].append(index)
     
