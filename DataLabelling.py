@@ -32,13 +32,15 @@ for file in fnames:
         plt.show(block=False)
         plt.pause(2)
         plt.close()
-        category = input("Write d for muon (straight lines), f for electron (Squiqqly lines), \n" + \
+        category = input("Write s for reading errors, d for muon (straight lines), f for electron (Squiqqly lines), \n" + \
                      "j for X-rays(small dots), k for other things. Any to repeat: ")
     categories[1].append(category)
     categories[0].append(index)
     
 # Convert categories to numbers
 def category_to_number(category):
+    if category == 's':
+        return 4
     if category == 'k':
         return 0
     if category == 'j':
